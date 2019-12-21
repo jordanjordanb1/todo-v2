@@ -1,0 +1,29 @@
+.login-header {
+    color: #dae3e5;
+}
+
+.login-body {
+    background: #dae3e5;
+    box-shadow: 5px 5px 2px -2px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+
+    input {
+        background: transparent;
+        border: none;
+        border-radius: initial;
+        border-bottom: 1px solid var(--rich-black);
+        transition: border 1s;
+
+        &:focus {
+            background: none;
+            box-shadow: initial;
+            border-bottom: 1px solid var(--cyan-azure);
+        }
+    }
+
+    .login-submit {
+        border: none;
+        color: #DAE3E5;
+        background: #04080f;
+    }
+}
