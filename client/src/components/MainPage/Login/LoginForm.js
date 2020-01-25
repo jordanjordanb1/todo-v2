@@ -15,7 +15,7 @@ const LoginForm = ({ setContainer }) => {
         login: Yup.object().shape({
             username: Yup.string().required('Username is required'),
             password: Yup.string().required('Password is required'),
-            persistLogin: Yup.boolean()
+            persistLogin: Yup.boolean().default(false)
         })
     })
 
