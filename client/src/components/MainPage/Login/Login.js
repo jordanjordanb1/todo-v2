@@ -87,9 +87,11 @@ export default class Login extends PureComponent {
                             </Row>
 
                             <Form.Group className="m-0">
-                                <ButtonGroup className="register-buttons home-buttons">
+                                <ButtonGroup className="login-buttons home-buttons">
                                     <Button>LOGIN</Button>
-                                    <Button onClick={() => setContainer(1)}>SIGNUP</Button>
+                                    <Button onClick={() => setContainer(1)}>SIGNUP &nbsp;<i className="fas fa-arrow-right"></i>
+
+                                    </Button>
                                 </ButtonGroup>
                             </Form.Group>
                         </Form>

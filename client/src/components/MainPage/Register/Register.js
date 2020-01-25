@@ -69,8 +69,8 @@ export default class Register extends PureComponent {
                             </Row>
 
                             <Form.Group className="m-0">
-                                <ButtonGroup className="login-buttons home-buttons">
-                                    <Button onClick={() => setContainer(0)}>BACK</Button>
+                                <ButtonGroup className="register-buttons home-buttons">
+                                    <Button onClick={() => setContainer(0)}><i className="fas fa-arrow-left"></i> &nbsp; BACK</Button>
                                     <Button>SUBMIT</Button>
                                 </ButtonGroup>
                             </Form.Group>
