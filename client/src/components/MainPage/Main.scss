@@ -10,6 +10,14 @@
         font-family: "Dosis", sans-serif;
     }
 
+    .form-error {
+        background: red;
+        font-family: "Dosis", sans-serif;
+        color: white;
+        border: none;
+        padding: 5px;
+    }
+
     .home-inputs {
         border-bottom: 2px solid orange;
         transition: border 500ms;

@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
-import PropTypes from 'prop-types'
 import './Register.scss'
 
 export default class Register extends PureComponent {
@@ -80,9 +79,4 @@ export default class Register extends PureComponent {
             </div>
         )
     }
-}
-
-Register.propTypes = {
-    container: PropTypes.number,
-    setContainer: PropTypes.func
 }
