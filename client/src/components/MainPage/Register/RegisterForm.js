@@ -8,14 +8,25 @@ import FormGroup from 'react-bootstrap/FormGroup'
 import Alert from 'react-bootstrap/Alert'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 const RegisterForm = ({ setContainer }) => {
     const RegisterSchema = Yup.object().shape({
         register: Yup.object().shape({
-            username: Yup.string().trim().lowercase()
+            username: Yup.string().trim()
                 .required('Username is required')
                 .min(3, 'Username must be longer than 3 characters')
-                .max(10, 'Username must be shorter than 10 characters'),
+                .max(10, 'Username must be shorter than 10 characters')
+                .test('username-exists', "Username already exists", async (username) => {
+                    return await axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
+                        const found = res.data.find(user => user.username === username)
+                        if (found) {
+                            return false // Username was found
+                        }
+
+                        return true // Username wasn't found
+                    })
+                }),
             email: Yup.string().trim()
                 .email("Email must be valid")
                 .notRequired(),
