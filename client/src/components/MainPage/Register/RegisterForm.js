@@ -20,6 +20,7 @@ const RegisterForm = ({ setContainer }) => {
                 .test('username-exists', "Username already exists", async (username) => {
                     return await axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
                         const found = res.data.find(user => user.username === username)
+
                         if (found) {
                             return false // Username was found
                         }
@@ -29,6 +30,17 @@ const RegisterForm = ({ setContainer }) => {
                 }),
             email: Yup.string().trim()
                 .email("Email must be valid")
+                .test('email-exists', 'Email is already registered', async (email) => {
+                    return await axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
+                        const found = res.data.find(user => user.email === email)
+
+                        if (found) {
+                            return false // Email was found
+                        }
+
+                        return true // Email wasn't found
+                    })
+                })
                 .notRequired(),
             password: Yup.string()
                 .required('Password is required')
